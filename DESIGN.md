@@ -7,20 +7,20 @@ The system follows an **ETL (Extract, Transform, Load)** pipeline approach, orch
 ```mermaid
 graph TD
     User([User / Scheduler]) -->|Starts| Main[main.py Orchestrator]
-    
-    subgraph Data Sources
+
+    subgraph "Data Sources"
         NewsAPI[External REST API]
         CSV[Local File System]
         Web[Website / HTML]
     end
 
-    subgraph Fetcher Layer [Strategy Pattern]
+    subgraph "Fetcher Layer - Strategy Pattern"
         NewsF[NewsAPIFetcher]
         CSVF[CSVFetcher]
         WebF[WebScraperFetcher]
     end
 
-    subgraph Core Logic
+    subgraph "Core Logic"
         Base[BaseFetcher Abstract Class]
         Model[Article Dataclass]
     end
@@ -37,9 +37,9 @@ graph TD
     CSVF -->|File I/O| CSV
     WebF -->|HTTP GET + Parse| Web
 
-    NewsF -->|Returns List[Article]| Main
-    CSVF -->|Returns List[Article]| Main
-    WebF -->|Returns List[Article]| Main
+    NewsF -->|Returns list of Article| Main
+    CSVF -->|Returns list of Article| Main
+    WebF -->|Returns list of Article| Main
 
     Main -->|Aggregates| JSON[Final JSON Output]
 ```
@@ -52,7 +52,7 @@ Class Diagram
 classDiagram
     class BaseFetcher {
         <<Abstract>>
-        +fetch() List[Article]
+        +fetch() -> List of Article
     }
 
     class Article {
