@@ -52,7 +52,7 @@ Class Diagram
 classDiagram
     class BaseFetcher {
         <<Abstract>>
-        +fetch() List~Article~
+        +fetch() List[Article]
     }
 
     class Article {
@@ -103,7 +103,7 @@ classDiagram
 ### C. Resilience Strategy
 * **NewsAPI:** Implemented Exponential Backoff retry logic to handle transient network failures or rate limits.
 
-* **Web Scraper:** Implemented Fallback Selectors. If the primary HTML tag (h3.post-title) is missing (due to site updates), the scraper automatically attempts to find data using a secondary selector (#index-by-category), preventing crashes.
+* **Web Scraper:** Implemented Fallback Selectors. If the primary HTML tag (h3.post-title) is missing (due to site updates), the scraper automatically attempts to find data using a secondary selector [...]
 
 ## 4. Future Scalability (Adding a 4th Source)
 The architecture is designed for "Open/Closed Principle" (Open for extension, closed for modification).
@@ -116,4 +116,4 @@ The architecture is designed for "Open/Closed Principle" (Open for extension, cl
 
 * Implement the async def fetch(self) method to return List[Article].
 
-* Add TwitterFetcher() to the sources list in main.py.    
+* Add TwitterFetcher() to the sources list in main.py.
