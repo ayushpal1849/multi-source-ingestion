@@ -5,7 +5,7 @@ from io import StringIO
 
 import aiofiles
 
-from fetchers.base import BaseFetcher, Article
+from fetchers.common import BaseFetcher, Article
 
 
 class CSVFetcher(BaseFetcher):

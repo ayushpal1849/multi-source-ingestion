@@ -5,7 +5,7 @@ from typing import List
 
 from dotenv import load_dotenv
 
-from fetchers.base import Article
+from fetchers.common import Article
 from fetchers.newsapi import NewsAPIFetcher
 from fetchers.csv_reader import CSVFetcher
 from fetchers.web_scraper import WebScraperFetcher
@@ -20,7 +20,7 @@ async def run_pipeline() -> None:
     all_articles: List[Article] = []
 
     # Instantiate fetchers
-    newsapi_fetcher = NewsAPIFetcher(use_mock=True)
+    newsapi_fetcher = NewsAPIFetcher(use_mock=False)
     csv_fetcher = CSVFetcher(file_path="input/sample_data.csv")
     web_scraper_fetcher = WebScraperFetcher()
 

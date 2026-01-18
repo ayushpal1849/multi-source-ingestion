@@ -4,7 +4,7 @@ from typing import List, Tuple
 import httpx
 from bs4 import BeautifulSoup
 
-from fetchers.base import BaseFetcher, Article
+from fetchers.common import BaseFetcher, Article
 
 
 class WebScraperFetcher(BaseFetcher):

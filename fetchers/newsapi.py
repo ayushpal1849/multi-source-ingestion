@@ -6,7 +6,7 @@ from typing import List
 import httpx
 from dotenv import load_dotenv
 
-from fetchers.base import BaseFetcher, Article
+from fetchers.common import BaseFetcher, Article
 
 load_dotenv()
 

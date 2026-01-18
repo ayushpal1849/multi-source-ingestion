@@ -3,7 +3,7 @@ import os
 import json
 from unittest.mock import patch, MagicMock, AsyncMock
 from main import run_pipeline
-from fetchers.base import Article
+from fetchers.common import Article
 
 # Dummy Article Object
 def create_dummy_article(source):

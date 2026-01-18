@@ -15,6 +15,14 @@ The goal was to build a robust, asynchronous data ingestion pipeline that fetche
 
 ---
 
+## Breakdown (Planned Tasks)
+Following the AI-Assisted Philosophy, I broke the problem into these chunks before coding:
+1.  **Define Interface:** Create `common.py` with `BaseFetcher` and `Article` dataclass.
+2.  **Local Ingestion:** Implement `CSVFetcher` using `aiofiles` for async I/O.
+3.  **API Integration:** Implement `NewsAPIFetcher` with retry logic.
+4.  **Web Scraping:** Implement `WebScraperFetcher` with fallback selectors.
+5.  **Orchestration:** Build `main.py` to run all fetchers concurrently.
+
 ## Step-by-Step Execution & AI Collaboration
 
 ### Task 1: Setup & Base Class
